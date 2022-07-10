@@ -1,6 +1,6 @@
 //소수점 계산 오류
 const fs = require('fs');
-const input = fs.readFileSync('/Users/gimsehan/Develop/Algorithm/-Algorithm-Training/.vscode/BOJ_Study_JS/test.txt').toString().split('\n');
+const input = fs.readFileSync('/Users/gimsehan/Develop/JS-algorithm/week1/input.txt').toString().split('\n');
 
 const T = input[0];
 
@@ -25,10 +25,18 @@ let n = 0;
 for (let i = 1; i<=T; i++) {
     let a,  b;
     [a, b] = input[i].split(" ").filter((e,i) => i == 2 || i == 1);
-    c = +(a*table[b]).toFixed(2);
-    answer += c
-    n += +a;
+    a = +a;
+    let score = table[b];
+    answer += myRound2(score*a);
+    n += a;
+    answer = myRound2(answer);
+    console.log(a, score, answer);
 }
-console.log(Math.round(answer/n * 100) / 100);
-//소수점 연산에서의 오류
-// 해결방법까지 블로그에 정리할 것
+console.log(myRound2(answer/n));
+
+
+function myRound2 (num) {
+    num *= 100;
+    if (num - parseInt(num) >= 0.5) return (parseInt(num) +1)/100;
+    else return parseInt(num)/100;
+} 
