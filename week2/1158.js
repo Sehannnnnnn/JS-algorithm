@@ -13,13 +13,12 @@ while (numList.length > 0) {
         i = K % numList.length ? K % numList.length : numList.length;
     }
     else {
-        i = K
+        i = K;
     }
     numList.splice(0,i-1).forEach(e => {
         numList.push(e);
     })   
     yoshepus.push(numList.shift());
-    console.log(numList);
 }
 
 console.log('<'+ yoshepus.join(', ') + '>')

@@ -11,7 +11,7 @@ logmap.forEach((value, key) => {
     if (value == 'enter') result.push(key);
 })
 
-result.sort((a,b) => b-a);
+result.sort().reverse();
 
 console.log(result.join('\n'));
 
