@@ -3,14 +3,19 @@ const input = fs.readFileSync('/Users/gimsehan/Develop/JS-algorithm/week3/input.
 
 const N = input.shift();
 
-const dict = new Map();
-let max = 0;
+const dict = {};
+let max = 1;
 
 input.forEach((book) => {
-    let a = dict.get(book) || 0;
-    dict.set(book, a+1);
-    if (a == max) max++;
+    if(!dict[book]) dict[book] = 1;
+    else {
+        let a = dict[book];
+        dict[book] = a+1;
+        if (a+1 > max) max = a+1;
+    }
 })
 
 
-console.log(Array.from(dict.keys()).filter((book) => dict.get(book) == max).sort().shift())
+const answer = Object.keys(dict).filter((book) => dict[book] == max).sort()
+
+console.log(answer[0]);

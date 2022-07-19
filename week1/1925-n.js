@@ -1,6 +1,6 @@
 //미해결 에러케이스 찾을수없음
 const fs = require('fs');
-const input =  fs.readFileSync('/Users/gimsehan/Develop/JS-algorithm/week1/input.txt').toString().split('\n');
+const input =  fs.readFileSync('/Users/gimsehan/Develop/JS-algorithm/week1/input.txt').toString().trim().split('\n');
 
 //input part
 let points = [];
