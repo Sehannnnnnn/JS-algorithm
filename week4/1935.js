@@ -1,4 +1,3 @@
-const e = require('express');
 const fs = require('fs');
 const input = fs.readFileSync('/Users/gimsehan/Develop/JS-algorithm/week4/input.txt').toString().trim().split('\n');
 
