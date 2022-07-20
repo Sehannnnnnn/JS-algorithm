@@ -14,31 +14,31 @@ let a, b, c;
 for (let ele of priFix) {
     switch(ele) {
         case '+':
-            b = stack.pop();
-            c = stack.pop();
-            stack.push(Number((c + b).toFixed(3)));
+            b = +stack.pop();
+            c = +stack.pop();
+            stack.push((c + b).toFixed(2));
             break;
         case '-':
-            b = stack.pop();
-            c = stack.pop();
-            stack.push(Number((c - b).toFixed(3)));
+            b = +stack.pop();
+            c = +stack.pop();
+            stack.push((c - b).toFixed(2));
             break;
         case '*':
-            b = stack.pop();
-            c = stack.pop();
-            stack.push(Number((c * b).toFixed(3)));
+            b = +stack.pop();
+            c = +stack.pop();
+            stack.push((c * b).toFixed(2));
             break;
         case '/':
-            b = stack.pop();
-            c = stack.pop();
-            stack.push(Number((c / b).toFixed(3)));
+            b = +stack.pop();
+            c = +stack.pop();
+            stack.push((c / b).toFixed(2));
             break;
         default:
             map.get(ele) ?? map.set(ele, numbers[i++]);
-            let a = map.get(ele);
+            a = map.get(ele);
             stack.push(a);
             break;
     }
     //반올림만 처리하면 통과
-    console.log(Math.round(stack[0] * 100)/100)
+    console.log(stack[0])
 }
