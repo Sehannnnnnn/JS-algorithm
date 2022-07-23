@@ -1,5 +1,5 @@
 const fs = require('fs');
-const input = fs.readFileSync('/Users/gimsehan/Develop/JS-algorithm/week3/input.txt').toString().split('\n');
+const input = fs.readFileSync('/Users/gimsehan/Develop/JS-algorithm/week3/input.txt').toString().trim().split('\n');
 
 const N = input.shift();
 

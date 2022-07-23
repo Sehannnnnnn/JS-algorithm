@@ -38,7 +38,3 @@ function pushorpop (n, queue) {
     }
     return true
 } 
-
-function printAnswer () {
-
-}

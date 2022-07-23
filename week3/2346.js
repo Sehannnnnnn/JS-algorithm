@@ -4,7 +4,6 @@ const input = fs.readFileSync('/Users/gimsehan/Develop/JS-algorithm/week3/input.
 const N = Number(input[0]);
 let numPapers = input[1].split(' ');
 let ballons = Array.from({length : N}, (v,i) => i+1);
-
 let pos;
 let move, piece;
 let answer = "";
@@ -20,7 +19,6 @@ while (ballons.length > 0) {
         piece = ballons.splice(-move);
         ballons = piece.concat(ballons);
     }
-    console.log(ballons);
 }
 
 console.log(answer);

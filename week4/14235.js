@@ -66,8 +66,6 @@ class MaxHeap {
 
 const santaBag = new MaxHeap();
 
-console.log(points)
-
 for (let point of points) {
     if (point == '0') {
         if (santaBag.size() == 0) console.log(-1);

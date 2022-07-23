@@ -1,4 +1,4 @@
-//폴리노미오 미해결
+//폴리노미오 해결
 const fs = require('fs');
 let input = fs.readFileSync('/Users/gimsehan/Develop/JS-algorithm/week1/input.txt').toString().trim();
 

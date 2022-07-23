@@ -17,7 +17,3 @@ function isUpperCase(str) {
     if(str == str.toUpperCase()) return true;
     return false
 }
-
-
-
-console.log(isUpperCase('c'))
