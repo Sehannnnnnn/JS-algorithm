@@ -17,6 +17,8 @@ for (let i = N+1; i < N+M+1; i++) {
 
 map.forEach((value, key) => {
     subs.forEach((sub) => {
-        console.log(key.includes(sub), key, sub);
+        if (key.includes(sub)) {
+
+        }                                                    
     })
 })

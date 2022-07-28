@@ -7,7 +7,7 @@ chatbot(2, underline);
 function chatbot(N, underline) {
     if (N == 0) {
         console.log(underline+'"재귀함수가 뭔가요?"')
-        console.log(underline+"재귀함수는 자기 자신을 호출하는 함수라네")
+        console.log(underline+'"재귀함수는 자기 자신을 호출하는 함수라네"')
         console.log(underline+"라고 답변하였지.");
         return;
     }
