@@ -2,7 +2,7 @@ const fs = require('fs');
 const input = fs.readFileSync('/Users/gimsehan/Develop/JS-algorithm/week5/input.txt').toString().trim().split('\n');
 
 const [N,S] = input[0].split(' ').map(e => +e);
-const arr = input[1].split(' ')
+const arr = input[1].split(' ').map(e => +e);
 let answer = 0;
 
 div(0, 0, S, arr);
