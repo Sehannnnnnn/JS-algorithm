@@ -4,8 +4,6 @@ const input = fs.readFileSync('/Users/gimsehan/Develop/JS-algorithm/week6/input.
 const T = Number(input[0]);
 const moveX = [1,2,2,1,-1,-2,-2,-1];
 const moveY = [2,1,-1,-2,-2,-1,1,2];
-const answer = []
-let k;
 for (let i = 1; i<T*3+1; i=i+3) {
     solution(
         +input[i]
@@ -13,7 +11,6 @@ for (let i = 1; i<T*3+1; i=i+3) {
         ,input[i+2].split(' ').map(v=>+v)
         )
 }
-console.log(answer.join('/n'));
 
 function solution(n, start, end) {
     const arr = Array.from({length: n}, () => Array.from({length: n}, () => 0));

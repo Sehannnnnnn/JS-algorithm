@@ -1,28 +1,26 @@
-const fs = require('fs');
-let [X,Y] = fs.readFileSync('/Users/gimsehan/Develop/JS-algorithm/week6/input.txt').toString().trim().split(' ').map(v => +v);
-let queue = [[X,0]];
-let log = Array.from({length: 100100}, () => false);
+let fs = require("fs");
+let input = fs.readFileSync("./dev/stdin").toString().split("\n");
 
-while (queue.length) {
-    let [pos, step] = queue.shift();
-    if (log[pos]) continue;
-    if (pos == Y) {
-        console.log(step);
-        break;
-    }
-    else {
-        log[pos] = true;
-        let nextpos = [[pos*2, step+1],[pos+1, step+1],[pos-1, step+1]];
-        nextpos.forEach((v,i) => {
-            if (!log[v[0]]) {
-                queue.push(v);
-                log[v[0]] = true;
-            }
-        })
-    }
-    
-}
+const [N, K] = input[0].split(" ").map(Number);
+const visited = [...Array(100001)].fill(0);
 
+const getFastestFindTime = (start, end) => {
+  const queue = [[start, 0]];
+  while (queue.length) {
+    const [pos, time] = queue.shift();
+    if (visited[pos]) continue;
+    if (pos === end) return time;
+    for (const move of [pos + 1, pos - 1, pos * 2]) {
+      !visited[move] &&
+        move >= 0 &&
+        move <= 100000 &&
+        queue.push([move, time + 1]);
+    }
+    visited[pos] = 1;
+  }
+};
+
+console.log(getFastestFindTime(N, K));
 
 
 // const log = new Map();

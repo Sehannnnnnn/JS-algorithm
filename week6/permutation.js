@@ -1,7 +1,7 @@
 const numbers = ['a','a','b','c'];
 
 const output = [];
-const permutation = (permu, rests,output) => {
+const permutation = (permu, rests, output) => {
     if (permu.length == numbers.length) {
         return output.push(permu);
     }
